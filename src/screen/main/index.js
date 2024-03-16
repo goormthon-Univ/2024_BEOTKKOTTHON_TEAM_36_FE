@@ -8,7 +8,7 @@ function MainScreen() {
 
       <div className="intro">
         <p className="intro1">AI가 추천하는 메일서비스, 매일,메일</p>
-        <p className="intro2">매일 메일</p>
+        <p className="intro2">매일 메일 집에 가고 싶다</p>
         <p className="intro3">
           처음 시작하는 그 모든 순간들, 매일,메일이 당신의 메일을 특별하게
           만들어줄 거에요. 감성적인 메일로 당신의 마음을 전하세요.
