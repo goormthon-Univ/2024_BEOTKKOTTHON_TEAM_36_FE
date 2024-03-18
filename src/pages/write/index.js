@@ -1,5 +1,9 @@
 function WriteScreen() {
-  return <div></div>;
+  return (
+    <div>
+      <div></div>
+    </div>
+  );
 }
 
 export default WriteScreen;

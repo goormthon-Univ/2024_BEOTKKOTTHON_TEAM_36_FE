@@ -4,7 +4,7 @@ import CommunityScreen from '../pages/community';
 import TemplateScreen from '../pages/template';
 import WriteScreen from '../pages/write';
 import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Fotter';
+import Footer from '../components/Footer/Footer';
 
 function App() {
   return (

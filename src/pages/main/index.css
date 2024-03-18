@@ -2,6 +2,7 @@
     background-image: url('../../asset/background.png');
     background-size: cover;
 }
+
 .intro1{
     color: #000;
 font-family: AppleSDGothicNeoSB00;
@@ -12,6 +13,7 @@ line-height: normal;
 /* text-align: center; */
 margin-left: 568px;
 margin-top: 115px;
+
 }
 
 .intro2{
@@ -22,6 +24,7 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 margin-left: 564px;
+
 }
 
 .introImage{
@@ -74,7 +77,6 @@ box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.20), 1px 1px 11px 0px rgba(0, 0, 0, 
     width: 521px;
     height: 521px;
     z-index: 2; /* backMonkey보다 앞에 오도록 설정 */
-    
   }
 
   .backMonkey {

@@ -5,6 +5,7 @@ import monkey from '../../asset/monkey.png';
 import backMonkey from '../../asset/image 1.png';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
+import mentImage from '../../asset/image 2.png';
 
 function MainScreen() {
   const navigate = useNavigate();
@@ -13,6 +14,9 @@ function MainScreen() {
   };
   return (
     <div>
+      {/* <div className="mentImages">
+        <img src={mentImage} alt="첫번째메일글씨" />
+      </div> */}
       <div className="intro">
         <p className="intro1">누구보다 쉽고 빠르게 메일을 보내는 방법</p>
         <img className="introImage" src={introImage} alt="소개이미지" />
