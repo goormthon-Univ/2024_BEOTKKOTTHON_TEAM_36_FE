@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
-import { ReactComponent as Logo } from '../../asset/maeilmail_logo.svg';
-import './styles.scss';
+import React from 'react';
+import './Header.css';
+import { Link } from 'react-router-dom';
+import homelogo from '../../asset/homelogo.png';
+import userlogo from '../../asset/User.png';
 
 export default function Header() {
   return (
-    <>
-      <div className="headerContainer">
-        <div>
-          <div className="menu">메일메일</div>
-        </div>
-        <Logo className="logo" />
-        <div>
-          <div className="menu">메일쓰러 가기</div>
-        </div>
+    <header>
+      <div>
+        <Link to="/">
+          <img className="homelogo" src={homelogo} alt="홈로고" />
+        </Link>
       </div>
-    </>
+      <div className="menu-container">
+        <Link to="/write" className="menu-item">
+          메일작성
+        </Link>
+        <Link to="/community" className="menu-item">
+          커뮤니티
+        </Link>
+        <Link to="/template" className="menu-item">
+          템플릿
+        </Link>
+        <img className="userlogo" src={userlogo} alt="사용자프로필" />
+      </div>
+    </header>
   );
 }

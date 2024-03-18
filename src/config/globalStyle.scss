@@ -1,4 +1,4 @@
-@use 'sass:math';
+// @use 'sass:math';
 // export 해야할 스타일 여기서 통합
 // $breakpoint-mobile: 768px;
 
@@ -8,12 +8,12 @@
 //   @return #{$calculatedSize * 1vw};
 // }
 
-// Screen 배경색 설정
-.bgGray {
-  background-color: #f2f2f2;
-  // font-size: toSize(40) px;
-}
+// // Screen 배경색 설정
+// .bgGray {
+//   background-color: #f2f2f2;
+//   // font-size: toSize(40) px;
+// }
 
-.bgWhite {
-  background-color: #ffffff;
-}
+// .bgWhite {
+//   background-color: #ffffff;
+// }

@@ -1,0 +1,16 @@
+.fotter{
+    position: fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    background: #2D2830;
+}
+
+p{
+color:#FFF;
+font-family: AppleSDGothicNeoSB00;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
