@@ -5,9 +5,10 @@ import TemplateScreen from '../pages/template';
 import WriteScreen from '../pages/write';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-
+import '@radix-ui/themes/styles.css';
 function App() {
   return (
+    // <Thems>
     <div className="App-container">
       <BrowserRouter>
         <Header />
@@ -20,6 +21,7 @@ function App() {
         <Footer />
       </BrowserRouter>
     </div>
+    // </Thems>
   );
 }
 
