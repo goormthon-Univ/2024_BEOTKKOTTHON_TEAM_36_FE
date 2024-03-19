@@ -6,12 +6,10 @@ import userlogo from '../../asset/User.png';
 
 export default function Header() {
   return (
-    <header>
-      <div>
-        <Link to="/">
-          <img className="homelogo" src={homelogo} alt="홈로고" />
-        </Link>
-      </div>
+    <header className="header">
+      <Link to="/">
+        <img className="homelogo" src={homelogo} alt="홈로고" />
+      </Link>
       <div className="menu-container">
         <Link to="/write" className="menu-item">
           메일작성

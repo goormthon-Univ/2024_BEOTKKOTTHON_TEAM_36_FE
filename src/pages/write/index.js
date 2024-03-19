@@ -1,30 +1,31 @@
 import { useEffect, useState } from 'react';
-import InputField from './InputField';
 import './index.css';
-
+import { FirstModal } from './Modal/FirstModal';
+import { useNavigate } from 'react-router-dom';
 function WriteScreen() {
-  const [title, setTitle] = useState('');
-  const [greeting, setGreeting] = useState('');
-  const [body, setBody] = useState('');
-  const [conclusion, setConclusion] = useState('');
+  const navigate = useNavigate();
+  const [isCheck, setIsCheck] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    if (!isOpen && !isCheck) {
+      navigate('/');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
 
   return (
     <div>
-      <div className="Inputs">
-        <InputField label="제목" value={title} setValue={setTitle} />
-        <InputField label="인사말" value={greeting} setValue={setGreeting} />
-        <InputField
-          label="본문"
-          value={body}
-          setValue={setBody}
-          isTextArea={true}
-        />
-        <InputField
-          label="맺음말"
-          value={conclusion}
-          setValue={setConclusion}
-        />
-      </div>
+      <FirstModal
+        isOpen={isOpen}
+        handleChangeModal={(open) => {
+          setIsOpen(open);
+        }}
+        handleCheck={() => {
+          setIsCheck(true);
+          setIsOpen(false);
+        }}
+      />
     </div>
   );
 }

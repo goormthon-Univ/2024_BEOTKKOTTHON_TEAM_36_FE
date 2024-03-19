@@ -1,14 +1,22 @@
-header{
+.header{
   display: flex;
   justify-content: space-between; /* logo와 메뉴 컨테이너를 양 끝으로 정렬 */
   align-items: center; /* 세로 중앙 정렬 */
+
+  padding: 26px 40px 0px;
+
+  margin: 0 auto;
+  
+  background-color: inherit;
+  max-width: 1570px;
+  min-width: 1280px;
+  
 }
 
 .menu-container{
   display:flex;
   gap: 28px;
   align-items: center;
-  margin-right: 173px;
 }
 
 .menu-item{
@@ -19,17 +27,11 @@ header{
   color: black;
   font-weight: 400;
   line-height: normal;
-  margin-top:21px;
 }
 
-.homelogo{
-  margin-top: 18px;
-  margin-left: 177px;
-}
 
 .userlogo{
     width: 33px;
     height: 33px;
     border-radius: 50px;
-    margin-top: 20px;
 }

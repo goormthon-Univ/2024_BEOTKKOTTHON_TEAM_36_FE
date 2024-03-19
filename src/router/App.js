@@ -1,27 +1,29 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Theme } from '@radix-ui/themes';
 import MainScreen from '../pages/main';
 import CommunityScreen from '../pages/community';
 import TemplateScreen from '../pages/template';
 import WriteScreen from '../pages/write';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import '@radix-ui/themes/styles.css';
+import { Frame } from '../components/Frame';
+import { RecoilRoot } from 'recoil';
+import '../styles/globalStyle.css';
+
 function App() {
   return (
-    // <Thems>
-    <div className="App-container">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<MainScreen />} />
-          <Route path="/write" element={<WriteScreen />} />
-          <Route path="/community" element={<CommunityScreen />} />
-          <Route path="/template" element={<TemplateScreen />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
-    // </Thems>
+    <Theme>
+      <RecoilRoot>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Frame />}>
+              <Route path="/" element={<MainScreen />} />
+              <Route path="/community" element={<CommunityScreen />} />
+              <Route path="/template" element={<TemplateScreen />} />
+              <Route path="/write" element={<WriteScreen />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </RecoilRoot>
+    </Theme>
   );
 }
 
