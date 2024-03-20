@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './index.css';
+// import './index.css';
 import { FirstModal } from './Modal/FirstModal';
 import { useNavigate } from 'react-router-dom';
 import Email from './Email';

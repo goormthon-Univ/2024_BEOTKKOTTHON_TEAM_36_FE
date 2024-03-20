@@ -27,7 +27,9 @@ function ModalInputs() {
 
   return (
     <div>
+      <hr />
       <p className="question">메일을 보내는 분은 누구인가요?</p>
+      <hr />
       <div className="Q">
         <p>From</p>
         <input
@@ -45,7 +47,9 @@ function ModalInputs() {
           onChange={handleChange}
         />
       </div>
+      <hr />
       <p>메일을 받으실 분은 누구인가요?</p>
+      <hr />
       <InputWithSelectBox
         inputName="recipientName"
         inputPlaceholder="이름입력"
@@ -54,14 +58,17 @@ function ModalInputs() {
         formData={formData}
         handleChange={handleChange}
       />
+      <hr />
       <p>어떤 상황에 사용하시는 건가요?</p>
+      <hr />
       <input
         className="situation-input"
-        placeholder="상황입력"
+        placeholder="ex) 증원 요청, 면담 요청, 시험 문의, 감사 인사"
         name="situation"
         value={formData.situation}
         onChange={handleChange}
-      ></input>
+      />
+      <hr />
       <div className="info">
         <p>
           입력된 내용을 바탕으로

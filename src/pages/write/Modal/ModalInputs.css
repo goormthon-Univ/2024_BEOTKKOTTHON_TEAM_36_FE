@@ -57,23 +57,8 @@ line-height: normal;
 margin-top: 60px;
 }
 
-.check{
-    display: flex;
-width: 242px;
-height: 70px;
-padding: 13px 40px 14px 38px;
-justify-content: center;
-align-items: center;
-flex-shrink: 0;
-border-radius: 100px;
-background: var(--buttem, #0E57CB);
-box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.20), 1px 1px 11px 0px rgba(0, 0, 0, 0.15) inset;
-color: #FFF;
-text-align: center;
-font-family: AppleSDGothicNeoB00;
-font-size: 21px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+hr{
+    height: 1.3px;
+    border: 0;
+    background-color: #FFD875;
 }
-
