@@ -5,7 +5,7 @@ import monkey from '../../asset/monkey.png';
 import backMonkey from '../../asset/image 1.png';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
-import mentImage from '../../asset/image 2.png';
+// import mentImage from '../../asset/image 2.png';
 import rightLogo from '../../asset/logo2.png';
 
 function MainScreen() {

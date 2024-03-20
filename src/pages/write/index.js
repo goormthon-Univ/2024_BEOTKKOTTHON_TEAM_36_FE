@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import './index.css';
 import { FirstModal } from './Modal/FirstModal';
 import { useNavigate } from 'react-router-dom';
+import Email from './Email';
+// import logo from '../../asset'
+
 function WriteScreen() {
   const navigate = useNavigate();
   const [isCheck, setIsCheck] = useState(false);
@@ -26,6 +29,10 @@ function WriteScreen() {
           setIsOpen(false);
         }}
       />
+      <div>
+        {/* <img src={logo} alt='회색 로고'/> */}
+        <Email />
+      </div>
     </div>
   );
 }

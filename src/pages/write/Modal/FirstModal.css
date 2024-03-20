@@ -1,0 +1,23 @@
+.firstment{
+    color: gray;
+text-align: center;
+font-family: AppleSDGothicNeoT00;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: 20px;
+margin-bottom: 67px;
+
+}
+
+.secondment{
+    color: #000;
+text-align: center;
+font-family: AppleSDGothicNeoSB00;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 21px;
+}

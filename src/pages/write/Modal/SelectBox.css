@@ -1,0 +1,12 @@
+.select-box{
+    display: flex;
+width: 187px;
+height: 28px;
+padding: 0px 10px 0px 15px;
+justify-content: space-between;
+align-items: center;
+flex-shrink: 0;
+border-radius: 200px;
+background: var(--sub2, #746A6A);
+color: white;
+}
