@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-// import './index.css';
+import './index.css';
 import { FirstModal } from './Modal/FirstModal';
 import { useNavigate } from 'react-router-dom';
-import Email from './Email';
+import LeftEmail from './LeftEmail';
 import Header from '../../components/Header/Header';
+import RightEmail from './RightEmail';
 // import logo from '../../asset'
 
 function WriteScreen() {
@@ -33,7 +34,10 @@ function WriteScreen() {
       />
       <div>
         {/* <img src={logo} alt='회색 로고'/> */}
-        <Email />
+        <div className="Email-container">
+          <LeftEmail />
+          <RightEmail />
+        </div>
       </div>
     </div>
   );

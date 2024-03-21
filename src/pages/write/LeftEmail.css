@@ -1,16 +1,13 @@
-.container{
-    display: flex;
-    justify-self: space-between;
-    margin-left: 130px;
-    margin-top: 30px;
-  }
+
 .left-container{
   display: flex;
   flex-direction: column;
 }
+
   .title{
     background-color: white;
     border: 2px solid grey;
+    width: 770px;
     height: 50px;
     border-radius: 5px;
     border: 3.25px solid rgba(116, 106, 106, 0.50);
@@ -19,7 +16,7 @@
   .main{
     background-color: white;
     border: 2px solid grey;
-    width: 779px;
+    width: 770px;
     height: 244px;
     border-radius: 5px;
     border: 3.25px solid rgba(116, 106, 106, 0.50);
@@ -28,7 +25,7 @@
   .greet{
     background-color: white;
     border: 2px solid grey;
-    width: 779px;
+    width: 770px;
     height: 136px;
     border-radius: 5px;
     border: 3.25px solid rgba(116, 106, 106, 0.50);
@@ -37,8 +34,21 @@
 .conclude{
     background-color: white;
     border: 2px solid grey;
-    width: 779px;
+    width: 770px;
     height: 142px;
     border-radius: 5px;
     border: 3.25px solid rgba(116, 106, 106, 0.50);
+}
+
+.title-container{
+  position: relative;
+}
+
+.titleButton, .greetButton, .mainButton, .concludeButton{
+  position: absolute;
+  background-color: #746A6A;
+  width: 85px;
+height: 35px;
+border: none;
+border-radius: 200px;
 }
