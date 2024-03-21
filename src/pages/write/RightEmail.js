@@ -1,5 +1,13 @@
+import { useState } from 'react';
 import './RightEmail.css';
+import LastModal from './Modal/LastModal';
+
 function RightEmail() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="right-container" style={{ marginLeft: '40px' }}>
       <div className="first-container">
@@ -16,6 +24,9 @@ function RightEmail() {
           style={{ width: '340px' }}
         />
         <button
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
           style={{
             width: '150px',
             height: '35px',
@@ -24,8 +35,11 @@ function RightEmail() {
             border: 'none',
             marginTop: '15px',
           }}
-        />
+        >
+          전송..
+        </button>
       </div>
+      <LastModal isOpen={isModalOpen} onClose={handleCloseModal}></LastModal>
     </div>
   );
 }

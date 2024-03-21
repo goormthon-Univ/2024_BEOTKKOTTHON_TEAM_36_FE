@@ -1,6 +1,7 @@
 import { Button, Flex } from '@radix-ui/themes';
 
-const BlueButton = ({ children, ...props }) => {
+const BlueButton = ({ children, className, ...props }) => {
+  const isReverse = className?.includes('reverse');
   const defaultStyle = {
     width: '242px',
     height: '70px',
@@ -11,10 +12,10 @@ const BlueButton = ({ children, ...props }) => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    background: 'var(--buttem, #0E57CB)',
+    background: isReverse ? 'transparent' : 'var(--buttem, #0E57CB)',
     boxShadow:
       '0px 4px 7px 0px rgba(0, 0, 0, 0.20), 1px 1px 11px 0px rgba(0, 0, 0, 0.15) inset',
-    color: 'white',
+    color: isReverse ? 'black' : 'white',
     marginRight: '90px',
   };
   return (
@@ -23,6 +24,7 @@ const BlueButton = ({ children, ...props }) => {
         style={{
           ...defaultStyle,
         }}
+        className={className}
         {...props} // onClick 등의 나머지 props를 전달
       >
         {children}

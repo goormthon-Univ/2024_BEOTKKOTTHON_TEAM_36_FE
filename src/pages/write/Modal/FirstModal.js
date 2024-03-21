@@ -98,7 +98,7 @@ export function FirstModal({ isOpen, handleCheck, handleChangeModal }) {
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={handleChangeModal}>
-      <Dialog.Content style={{ maxWidth: 470, height: 608 }}>
+      <Dialog.Content style={{ maxWidth: 470, height: 608, padding: '0px' }}>
         {renderContent()}
       </Dialog.Content>
     </Dialog.Root>

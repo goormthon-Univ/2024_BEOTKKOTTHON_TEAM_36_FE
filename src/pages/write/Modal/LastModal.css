@@ -1,0 +1,39 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+
+    border-radius: 8px;
+    width: 454px;
+height: 568px;
+  }
+  
+  .contents{
+    color: gray;
+    width: 230px;
+text-align: center;
+font-family: AppleSDGothicNeoT00;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: 11px;
+margin-left: 113px;
+}
+
+
+.reverse{
+    
+    margin-top: 40px;
+    border: 4px solid var(--buttem, #0E57CB);
+}
