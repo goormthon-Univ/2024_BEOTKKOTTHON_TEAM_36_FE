@@ -20,7 +20,7 @@ function ModalInputs() {
     });
   };
   //selectBox 아이디를 사용해야 할 것 같은뎁....
-  //modal 닫으면 홈으로 이동.... 추가
+
   useEffect(() => {
     console.log(formData);
   }, [formData]);

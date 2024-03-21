@@ -7,7 +7,7 @@ import grayLogo from '../../asset/grayLogo.png';
 import emailMonkey from '../../asset/emailMonkey.png';
 import InputWithButton from './InputWithButton';
 
-export default function Email() {
+export default function LeftEmail() {
   const [contents, setContents] = useState({
     title: '',
     greet: '',
@@ -21,10 +21,10 @@ export default function Email() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setContents((prevContents) => ({
-      ...prevContents,
+    setContents({
+      ...contents,
       [name]: value,
-    }));
+    });
   };
   return (
     <div className="left-container">
@@ -41,6 +41,7 @@ export default function Email() {
             name="title"
             className="title"
             placeholder="제목"
+            value={contents.title}
             onChange={handleChange}
             onButtonClick={handleButtonClick}
           />
@@ -48,6 +49,7 @@ export default function Email() {
             name="greet"
             className="greet"
             placeholder="인사말"
+            value={contents.greet}
             onChange={handleChange}
             onButtonClick={handleButtonClick}
           />
@@ -55,6 +57,7 @@ export default function Email() {
             name="main"
             className="main"
             placeholder="본문"
+            value={contents.main}
             onChange={handleChange}
             onButtonClick={handleButtonClick}
           />
@@ -62,6 +65,7 @@ export default function Email() {
             name="conclude"
             className="conclude"
             placeholder="맺음말"
+            value={contents.conclude}
             onChange={handleChange}
             onButtonClick={handleButtonClick}
           />
