@@ -1,11 +1,13 @@
 .container{
     display: flex;
     justify-self: space-between;
-    margin-left: 160px;
-    margin-top: 150px;
-    
+    margin-left: 130px;
+    margin-top: 30px;
   }
-  
+.left-container{
+  display: flex;
+  flex-direction: column;
+}
   .title{
     background-color: white;
     border: 2px solid grey;

@@ -52,7 +52,7 @@ function ModalInputs() {
       <hr />
       <InputWithSelectBox
         inputName="recipientName"
-        inputPlaceholder="이름입력"
+        inputPlaceholder="텍스트 입력"
         selectType="length"
         selectName="length"
         formData={formData}

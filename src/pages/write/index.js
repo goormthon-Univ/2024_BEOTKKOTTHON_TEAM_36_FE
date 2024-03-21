@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { FirstModal } from './Modal/FirstModal';
 import { useNavigate } from 'react-router-dom';
 import Email from './Email';
+import Header from '../../components/Header/Header';
 // import logo from '../../asset'
 
 function WriteScreen() {
@@ -19,6 +20,7 @@ function WriteScreen() {
 
   return (
     <div>
+      <Header />
       <FirstModal
         isOpen={isOpen}
         handleChangeModal={(open) => {

@@ -9,7 +9,6 @@ import { useWindowSize } from '../../hooks/useWindowSize';
 export const Frame = () => {
   const { width, height } = useWindowSize();
 
-  console.log(width, height);
   return (
     <Flex
       direction={'column'}

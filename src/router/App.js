@@ -7,6 +7,7 @@ import WriteScreen from '../pages/write';
 import { Frame } from '../components/Frame';
 import { RecoilRoot } from 'recoil';
 import '../styles/globalStyle.css';
+import Header from '../components/Header/Header';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
               <Route path="/" element={<MainScreen />} />
               <Route path="/community" element={<CommunityScreen />} />
               <Route path="/template" element={<TemplateScreen />} />
+            </Route>
+            <Route>
               <Route path="/write" element={<WriteScreen />} />
             </Route>
           </Routes>

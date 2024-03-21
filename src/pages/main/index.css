@@ -79,6 +79,7 @@ box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.20), 1px 1px 11px 0px rgba(0, 0, 0, 
     width: 521px;
     height: 521px;
     z-index: 2; /* backMonkey보다 앞에 오도록 설정 */
+    pointer-events: 'none',
   }
 
   .backMonkey {
@@ -88,6 +89,7 @@ box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.20), 1px 1px 11px 0px rgba(0, 0, 0, 
     bottom: 0;
     left: 0;
     z-index: 1; /* monkey보다 뒤에 오도록 설정 */
+    pointer-events: 'none',
   }
 
   .right-logo{ 
