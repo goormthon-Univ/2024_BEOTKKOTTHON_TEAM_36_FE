@@ -1,7 +1,7 @@
 import './LeftEmail.css';
 import '@radix-ui/themes/styles.css';
 import { Theme, Flex } from '@radix-ui/themes';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import mailHeader from '../../asset/emailHeader.png';
 import grayLogo from '../../asset/grayLogo.png';
 import emailMonkey from '../../asset/emailMonkey.png';
@@ -25,7 +25,19 @@ export default function LeftEmail() {
       ...contents,
       [name]: value,
     });
+
+    // const isButtonEnabled = !!value.trim();
+    // console.log(
+    //   `${name} 필드의 버튼 활성화 상태: ${
+    //     isButtonEnabled ? '활성화' : '비활성화'
+    //   }`,
+    // );
   };
+
+  useEffect(() => {
+    console.log(contents);
+  }, [contents]);
+
   return (
     <div className="left-container">
       {/* <img src={emailMonkey} alt="몽키 얼굴" style={{ width: '369px' }} /> */}

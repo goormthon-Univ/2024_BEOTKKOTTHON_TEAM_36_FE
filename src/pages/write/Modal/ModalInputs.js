@@ -31,6 +31,7 @@ function ModalInputs() {
       <p className="question">메일을 보내는 분은 누구인가요?</p>
       <hr />
       <div className="Q">
+        {/* <label></label> */}
         <p>From</p>
         <input
           className="name-input"

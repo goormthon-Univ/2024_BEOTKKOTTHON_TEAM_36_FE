@@ -1,6 +1,7 @@
 import React from 'react';
 
 function InputWithButton({
+  name,
   className,
   placeholder,
   onButtonClick,
@@ -10,6 +11,7 @@ function InputWithButton({
   return (
     <div className={`${className}-container`} style={{ position: 'relative' }}>
       <input
+        name={name}
         className={className}
         placeholder={placeholder}
         value={value}
@@ -18,6 +20,7 @@ function InputWithButton({
       <button
         className={`${className}Button`}
         onClick={onButtonClick}
+        disabled={!value.trim()}
         style={{
           position: 'absolute',
           right: '10px',
