@@ -13,11 +13,12 @@ export default function LeftEmail() {
     greet: { text: '', length: 0 },
     main: { text: '', length: 0 },
     conclude: { text: '', length: 0 },
-
-    // title: '',
-    // greet: '',
-    // main: '',
-    // conclude: '',
+  });
+  const [isInputed, setInputed] = useState({
+    title: false,
+    greet: false,
+    main: false,
+    conclude: false,
   });
 
   const handleButtonClick = () => {
@@ -30,17 +31,15 @@ export default function LeftEmail() {
       ...contents,
       [name]: { text: value, length: value.length },
     });
+    setInputed({
+      ...isInputed,
+      [name]: value.length > 0,
+    });
   };
-  // const isButtonEnabled = !!value.trim();
-  // console.log(
-  //   `${name} 필드의 버튼 활성화 상태: ${
-  //     isButtonEnabled ? '활성화' : '비활성화'
-  //   }`,
-  // );
 
   useEffect(() => {
-    console.log(contents);
-  }, [contents]);
+    console.log(isInputed);
+  }, [isInputed]);
 
   return (
     <div className="left-container">

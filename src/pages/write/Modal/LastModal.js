@@ -41,7 +41,7 @@ function LastModal({ isOpen, onClose }) {
           ???자의 텍스트를 완성했고
           <br />
           <br />
-          <br /> 맺음말을 작성하지 않으셨어요
+          <br /> ???을 작성하지 않으셨어요
         </div>
         <div style={{ position: 'relative' }}>
           <Flex direction="column" gap="0" style={{ marginRight: '15px' }}>
