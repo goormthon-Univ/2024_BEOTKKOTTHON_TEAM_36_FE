@@ -57,7 +57,7 @@ export default function LeftEmail() {
             name="title"
             className="title"
             placeholder="제목"
-            value={contents.title}
+            value={contents.title.text}
             onChange={handleChange}
             onButtonClick={handleButtonClick}
           />
@@ -65,7 +65,7 @@ export default function LeftEmail() {
             name="greet"
             className="greet"
             placeholder="인사말"
-            value={contents.greet}
+            value={contents.greet.text}
             onChange={handleChange}
             onButtonClick={handleButtonClick}
           />
@@ -73,7 +73,7 @@ export default function LeftEmail() {
             name="main"
             className="main"
             placeholder="본문"
-            value={contents.main}
+            value={contents.main.text}
             onChange={handleChange}
             onButtonClick={handleButtonClick}
           />
@@ -81,7 +81,7 @@ export default function LeftEmail() {
             name="conclude"
             className="conclude"
             placeholder="맺음말"
-            value={contents.conclude}
+            value={contents.conclude.text}
             onChange={handleChange}
             onButtonClick={handleButtonClick}
           />
