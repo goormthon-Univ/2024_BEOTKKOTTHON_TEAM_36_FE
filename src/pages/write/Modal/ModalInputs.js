@@ -9,7 +9,7 @@ function ModalInputs() {
     sendInput: '',
     recipientName: '',
     situation: '',
-    length: '',
+    target: '',
   });
 
   const handleChange = (e) => {
@@ -52,11 +52,12 @@ function ModalInputs() {
       <p>메일을 받으실 분은 누구인가요?</p>
       <hr />
       <InputWithSelectBox
+        name="target"
         inputName="recipientName"
         inputPlaceholder="텍스트 입력"
-        selectType="length"
-        selectName="length"
-        formData={formData}
+        selectType="target"
+        selectName="target"
+        formData={formData.target}
         handleChange={handleChange}
       />
       <hr />

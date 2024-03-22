@@ -20,7 +20,7 @@ function InputWithButton({
       <button
         className={`${className}Button`}
         onClick={onButtonClick}
-        disabled={!value.trim()}
+        // disabled={!value.trim()}
         style={{
           position: 'absolute',
           right: '10px',

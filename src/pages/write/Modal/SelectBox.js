@@ -8,10 +8,10 @@ const Options = [
   { id: 5, value: '친구' },
 ];
 
-function SelectBox({ onChange }) {
+function SelectBox({ onChange, name }) {
   const options = Options;
   return (
-    <select className="select-box" onChange={onChange}>
+    <select className="select-box" name={name} onChange={onChange}>
       {options.map((option) => (
         <option key={option.id} value={option.value}>
           {option.value}

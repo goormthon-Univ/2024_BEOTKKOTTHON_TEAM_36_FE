@@ -21,8 +21,8 @@ function InputWithSelectBox({
         onChange={handleChange}
       ></input>
       <SelectBox
-        className="inputs"
-        type={selectType}
+        // className="inputs"
+        selecType={selectType}
         name={selectName}
         value={formData[selectName]}
         onChange={handleChange}

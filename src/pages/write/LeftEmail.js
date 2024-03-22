@@ -9,10 +9,15 @@ import InputWithButton from './InputWithButton';
 
 export default function LeftEmail() {
   const [contents, setContents] = useState({
-    title: '',
-    greet: '',
-    main: '',
-    conclude: '',
+    title: { text: '', length: 0 },
+    greet: { text: '', length: 0 },
+    main: { text: '', length: 0 },
+    conclude: { text: '', length: 0 },
+
+    // title: '',
+    // greet: '',
+    // main: '',
+    // conclude: '',
   });
 
   const handleButtonClick = () => {
@@ -23,16 +28,15 @@ export default function LeftEmail() {
     const { name, value } = e.target;
     setContents({
       ...contents,
-      [name]: value,
+      [name]: { text: value, length: value.length },
     });
-
-    // const isButtonEnabled = !!value.trim();
-    // console.log(
-    //   `${name} 필드의 버튼 활성화 상태: ${
-    //     isButtonEnabled ? '활성화' : '비활성화'
-    //   }`,
-    // );
   };
+  // const isButtonEnabled = !!value.trim();
+  // console.log(
+  //   `${name} 필드의 버튼 활성화 상태: ${
+  //     isButtonEnabled ? '활성화' : '비활성화'
+  //   }`,
+  // );
 
   useEffect(() => {
     console.log(contents);
