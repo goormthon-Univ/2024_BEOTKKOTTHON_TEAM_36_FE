@@ -2,15 +2,18 @@ import { useEffect, useState } from 'react';
 import './ModalInputs.css';
 import InputWithSelectBox from './InputWithSelect';
 import '@radix-ui/themes/styles.css';
+import { useRecoilState } from 'recoil';
+import { formDataState } from '../../../recoil/atoms';
 
 function ModalInputs() {
-  const [formData, setFormData] = useState({
-    sendName: '',
-    sendInput: '',
-    recipientName: '',
-    situation: '',
-    target: '',
-  });
+  const [formData, setFormData] = useRecoilState(formDataState);
+  // const [formData, setFormData] = useState({
+  //   sendName: '',
+  //   sendInput: '',
+  //   recipientName: '',
+  //   situation: '',
+  //   target: '',
+  // });
 
   const handleChange = (e) => {
     const { name, value } = e.target;

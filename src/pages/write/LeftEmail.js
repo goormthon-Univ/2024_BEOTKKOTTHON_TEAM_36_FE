@@ -1,25 +1,30 @@
 import './LeftEmail.css';
 import '@radix-ui/themes/styles.css';
 import { Theme, Flex } from '@radix-ui/themes';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import mailHeader from '../../asset/emailHeader.png';
 import grayLogo from '../../asset/grayLogo.png';
 import emailMonkey from '../../asset/emailMonkey.png';
 import InputWithButton from './InputWithButton';
+import { useRecoilState } from 'recoil';
+import { contentsState, isInputedState } from '../../recoil/atoms';
+
+// const [contents, setContents] = useState({
+//   title: { text: '', length: 0 },
+//   greet: { text: '', length: 0 },
+//   main: { text: '', length: 0 },
+//   conclude: { text: '', length: 0 },
+// });
+// const [isInputed, setInputed] = useState({
+//   title: false,
+//   greet: false,
+//   main: false,
+//   conclude: false,
+// });
 
 export default function LeftEmail() {
-  const [contents, setContents] = useState({
-    title: { text: '', length: 0 },
-    greet: { text: '', length: 0 },
-    main: { text: '', length: 0 },
-    conclude: { text: '', length: 0 },
-  });
-  const [isInputed, setInputed] = useState({
-    title: false,
-    greet: false,
-    main: false,
-    conclude: false,
-  });
+  const [contents, setContents] = useRecoilState(contentsState);
+  const [isInputed, setInputed] = useRecoilState(isInputedState);
 
   const handleButtonClick = () => {
     // console.log('button');

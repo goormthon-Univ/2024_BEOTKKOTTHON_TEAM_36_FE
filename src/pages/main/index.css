@@ -6,13 +6,9 @@
 .intro {
   display: flex;
   flex-direction: column;
-
-
   width: fit-content;
   margin: 0 auto;
-
-  padding-top: 115px;
-
+  padding-top: 80px;
   gap: 2px;
 }
 
@@ -75,7 +71,7 @@ box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.20), 1px 1px 11px 0px rgba(0, 0, 0, 
 .monkey {
     position: absolute;
     bottom: 0;
-    left: 119px;
+    /* left: 40px; */
     width: 521px;
     height: 521px;
     z-index: 2; /* backMonkey보다 앞에 오도록 설정 */
@@ -94,8 +90,8 @@ box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.20), 1px 1px 11px 0px rgba(0, 0, 0, 
 
   .right-logo{ 
     position: absolute;
-    width: 583px;
-    height: 413px;
+    width: 570px;
+    height: 400px;
     top: 0;
     right: 0;
     z-index: 1; /* monkey보다 뒤에 오도록 설정 */
