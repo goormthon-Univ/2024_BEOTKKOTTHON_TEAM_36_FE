@@ -1,13 +1,15 @@
 import './LeftEmail.css';
 import '@radix-ui/themes/styles.css';
 import { Theme, Flex } from '@radix-ui/themes';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import mailHeader from '../../asset/emailHeader.png';
 import grayLogo from '../../asset/grayLogo.png';
 import RightEmail from './RightEmail';
 import axios from 'axios';
 import aiLogo from '../../asset/aiLogo.png';
 import { useRecoilState, useRecoilValue } from 'recoil';
+
+import emailMonkey from '../../asset/emailMonkey.png';
 import {
   contentsState,
   formDataState,
@@ -19,6 +21,8 @@ export default function LeftEmailTitle() {
   const [isInputed, setInputed] = useRecoilState(isInputedState);
   const Content = useRecoilValue(contentsState);
   const formData = useRecoilValue(formDataState);
+  const [apiResponse, setApiResponse] = useState(null);
+  const [kind, setKind] = useState('');
 
   const handleButtonClick = () => {};
 
@@ -37,6 +41,8 @@ export default function LeftEmailTitle() {
         postData,
         { timeout: 30000 },
       );
+      setApiResponse(response.data);
+      setKind('제목');
       console.log('성공:', response.data);
     } catch (error) {
       console.error('오류 발생:', error);
@@ -58,6 +64,8 @@ export default function LeftEmailTitle() {
         postData,
         { timeout: 30000 },
       );
+      setApiResponse(response.data);
+      setKind('인사말');
       console.log('성공:', response.data);
     } catch (error) {
       console.error('오류 발생:', error);
@@ -78,6 +86,8 @@ export default function LeftEmailTitle() {
         postData,
         { timeout: 30000 },
       );
+      setApiResponse(response.data);
+      setKind('본문');
       console.log('성공:', response.data);
     } catch (error) {
       console.error('오류 발생:', error);
@@ -85,6 +95,7 @@ export default function LeftEmailTitle() {
   };
 
   const handleButtonClickClosing = async () => {
+    const startLoding = () => {};
     try {
       const postData = {
         user_id: 1,
@@ -99,6 +110,8 @@ export default function LeftEmailTitle() {
         postData,
         { timeout: 30000 },
       );
+      setApiResponse(response.data);
+      setKind('맺음말');
       console.log('성공:', response.data);
     } catch (error) {
       console.error('오류 발생:', error);
@@ -125,8 +138,11 @@ export default function LeftEmailTitle() {
   return (
     <div className="top-container">
       <div className="left-container">
-        {/* <img src={emailMonkey} alt="몽키 얼굴" style={{ width: '369px' }} /> */}
-        <img src={grayLogo} alt="회색 메일 로고" style={{ width: '779px' }} />
+        <img
+          src={emailMonkey}
+          alt="회색 메일 로고"
+          style={{ width: '779px' }}
+        />
         <img
           src={mailHeader}
           alt="메일 갈색 헤더"
@@ -195,7 +211,7 @@ export default function LeftEmailTitle() {
         </Theme>
       </div>
       <div className="right-container">
-        <RightEmail />
+        <RightEmail apiResponse={apiResponse} kind={kind} />
       </div>
     </div>
   );
