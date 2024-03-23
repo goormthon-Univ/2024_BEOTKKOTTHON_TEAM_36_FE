@@ -32,7 +32,7 @@ export function FirstModal({ isOpen, handleCheck, handleChangeModal }) {
                   width: '155px',
                   height: '39px',
                   marginTop: '30px',
-                  marginLeft: '142px',
+                  marginLeft: '165px',
                 }}
               />
             </div>
@@ -47,7 +47,11 @@ export function FirstModal({ isOpen, handleCheck, handleChangeModal }) {
               <br />
               함께해봐요
             </p>
-            <BlueButton className="next" onClick={() => setStep(2)}>
+            <BlueButton
+              className="next"
+              style={{ marginRight: '110px', marginTop: '21px' }}
+              onClick={() => setStep(2)}
+            >
               AI 자동생성하기
             </BlueButton>
 
@@ -57,9 +61,9 @@ export function FirstModal({ isOpen, handleCheck, handleChangeModal }) {
               style={{
                 position: 'absolute',
                 bottom: '0',
-                left: '80px',
+                left: '100px',
                 top: '230px',
-                // opacity: 0.7,
+                opacity: 0.5,
                 pointerEvents: 'none',
               }}
             />
@@ -75,16 +79,20 @@ export function FirstModal({ isOpen, handleCheck, handleChangeModal }) {
             />
             <ModalInputs />
             <div style={{ position: 'relative' }}>
-              <BlueButton onClick={handleCheck}>확인하러가기</BlueButton>
+              <BlueButton
+                style={{ marginRight: '110px', marginTop: '21px' }}
+                onClick={handleCheck}
+              >
+                확인하러가기
+              </BlueButton>
               <img
                 src={modalMonkey}
                 alt="버튼 뒤 몽키"
                 style={{
                   position: 'absolute',
                   bottom: '0',
-                  left: '80px',
-
-                  opacity: 0.7,
+                  left: '100px',
+                  opacity: 0.5,
                   pointerEvents: 'none',
                 }}
               />

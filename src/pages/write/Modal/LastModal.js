@@ -70,7 +70,6 @@ function LastModal({ isOpen, onClose }) {
           {formData.sendName}님께서는 <br />
           {totalLength}자의 텍스트를 완성했고
           <br />
-          <br />
           <br />{' '}
           {notInputedNames.length > 0
             ? `${notInputedNames} 항목을 작성하지 않으셨어요`
@@ -78,10 +77,16 @@ function LastModal({ isOpen, onClose }) {
         </div>
         <div style={{ position: 'relative' }}>
           <Flex direction="column" gap="0" style={{ marginRight: '15px' }}>
-            <BlueButton className="reverse" onClick={onClose}>
+            <BlueButton
+              className="reverse"
+              style={{ marginRight: '85px' }}
+              onClick={onClose}
+            >
               수정하기
             </BlueButton>
-            <BlueButton>최종 전송하기</BlueButton>
+            <BlueButton style={{ marginRight: '85px' }}>
+              최종 전송하기
+            </BlueButton>
           </Flex>
           <img
             src={modalMonkey}
@@ -89,8 +94,8 @@ function LastModal({ isOpen, onClose }) {
             style={{
               position: 'absolute',
               bottom: '0',
-              left: '80px',
-              opacity: 0.7,
+              left: '87px',
+              opacity: 0.6,
               pointerEvents: 'none',
             }}
           />

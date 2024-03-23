@@ -1,10 +1,11 @@
-
 h2{
     display: flex;
     justify-content: center;
 
 }
-
+.yellow{
+    margin-top: 25px;
+}
 .name-input{
 color: white;
 display: flex;
@@ -32,7 +33,7 @@ border-radius: 200px;
 background: var(--sub2, #746A6A);
 border: none;
 color: white;
-margin-top: 10px;
+margin: 20px 20px;
 }
 
 .name-input::placeholder, .situation-input::placeholder{
@@ -42,8 +43,11 @@ margin-top: 10px;
 .Q{
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 15px 20px;
+}
+
+.question{
+    margin: 5px 20px;
 }
 
 .info{
@@ -61,4 +65,5 @@ hr{
     height: 1.3px;
     border: 0;
     background-color: #FFD875;
+    width: 430px;
 }

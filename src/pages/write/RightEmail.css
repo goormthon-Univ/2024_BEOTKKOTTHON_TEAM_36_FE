@@ -1,3 +1,41 @@
-.first-container{
+.first-container, .last-container{
     display: flex;
   }
+
+.receiverEmail, .senderEmail{
+  border-radius: 5px;
+background: rgba(116, 106, 106, 0.50);
+width: 340px;
+height: 30px;
+ margin: 5px;
+ border: none;
+ font-size: 18px;
+}
+
+.receiverEmail::placeholder, .senderEmail::placeholder{
+  color:rgba(0, 0, 0, 0.50);
+  padding: 10px;
+  font-family: AppleSDGothicNeoSB00;
+}
+
+.reference{
+  color:rgba(0, 0, 0, 0.50);
+  width: 155px;
+  height: 30px;
+  border-radius: 5px;
+background: rgba(116, 106, 106, 0.50);
+font-family: AppleSDGothicNeoSB00;
+font-size: 18px;
+padding-top: 3px;
+padding-left: 10px;
+margin-top: 5px;
+}
+
+.emailContents{
+  width: 514px;
+  height: 600px;
+  border-radius: 5px;
+    border: 3.25px solid rgba(116, 106, 106, 0.50);
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.20);
+}
+

@@ -24,13 +24,13 @@ function ModalInputs() {
   };
   //selectBox 아이디를 사용해야 할 것 같은뎁....
 
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
+  // useEffect(() => {
+  //   console.log(formData);
+  // }, [formData]);
 
   return (
     <div>
-      <hr />
+      <hr className="yellow" />
       <p className="question">메일을 보내는 분은 누구인가요?</p>
       <hr />
       <div className="Q">
@@ -52,7 +52,7 @@ function ModalInputs() {
         />
       </div>
       <hr />
-      <p>메일을 받으실 분은 누구인가요?</p>
+      <p className="question">메일을 받으실 분은 누구인가요?</p>
       <hr />
       <InputWithSelectBox
         name="target"
@@ -64,7 +64,7 @@ function ModalInputs() {
         handleChange={handleChange}
       />
       <hr />
-      <p>어떤 상황에 사용하시는 건가요?</p>
+      <p className="question">어떤 상황에 사용하시는 건가요?</p>
       <hr />
       <input
         className="situation-input"

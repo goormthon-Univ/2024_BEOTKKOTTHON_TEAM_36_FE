@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './RightEmail.css';
 import LastModal from './Modal/LastModal';
-
+import arrow from '../../asset/sendArrow.png';
 function RightEmail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -12,14 +12,15 @@ function RightEmail() {
     <div className="right-container" style={{ marginLeft: '40px' }}>
       <div className="first-container">
         <input
+          className="receiverEmail"
           placeholder="받는 사람 주소를 입력해주세요!"
-          style={{ width: '340px' }}
         />
-        <div style={{ border: '1px solid green', width: '150px' }}>참조</div>
+        <div className="reference">참조</div>
       </div>
-      <div style={{ border: '2px solid blue', height: '600px' }}></div>
+      <div className="emailContents"></div>
       <div className="last-container">
         <input
+          className="senderEmail"
           placeholder="보내는 사람 주소를 입력해주세요!"
           style={{ width: '340px' }}
         />
@@ -33,10 +34,10 @@ function RightEmail() {
             borderRadius: '200px',
             backgroundColor: '#0E57CB',
             border: 'none',
-            marginTop: '15px',
+            marginTop: '3px',
           }}
         >
-          전송..
+          <img src={arrow} alt="전송 화살표" style={{ marginTop: '5px' }} />
         </button>
       </div>
       <LastModal isOpen={isModalOpen} onClose={handleCloseModal}></LastModal>

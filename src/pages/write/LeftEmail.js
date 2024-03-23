@@ -6,29 +6,48 @@ import mailHeader from '../../asset/emailHeader.png';
 import grayLogo from '../../asset/grayLogo.png';
 import emailMonkey from '../../asset/emailMonkey.png';
 import InputWithButton from './InputWithButton';
-import { useRecoilState } from 'recoil';
-import { contentsState, isInputedState } from '../../recoil/atoms';
-
-// const [contents, setContents] = useState({
-//   title: { text: '', length: 0 },
-//   greet: { text: '', length: 0 },
-//   main: { text: '', length: 0 },
-//   conclude: { text: '', length: 0 },
-// });
-// const [isInputed, setInputed] = useState({
-//   title: false,
-//   greet: false,
-//   main: false,
-//   conclude: false,
-// });
+import { useRecoilState, useRecoilValue } from 'recoil';
+import {
+  contentsState,
+  formDataState,
+  isInputedState,
+} from '../../recoil/atoms';
+import axios from 'axios';
 
 export default function LeftEmail() {
   const [contents, setContents] = useRecoilState(contentsState);
   const [isInputed, setInputed] = useRecoilState(isInputedState);
+  const Content = useRecoilValue(contentsState);
+  const formData = useRecoilValue(formDataState);
 
   const handleButtonClick = () => {
     // console.log('button');
   };
+
+  // useEffect(() => {
+  //   const postData = async () => {
+  //     const PostData = {
+  //       user_id: 1,
+  //       sender: formData.sendName,
+  //       sender_info: formData.situation,
+  //       receiver: formData.recipientName,
+  //       receiver_info: formData.target,
+  //       purpose: Content.main.text,
+  //     };
+
+  //     try {
+  //       const response = await axios.post(
+  //         'https://maeilmail.site/api/helper',
+  //         PostData,
+  //       );
+  //       console.log('성공:', response.data);
+  //     } catch (error) {
+  //       console.error('오류 발생:', error);
+  //     }
+  //   };
+
+  //   postData();
+  // }, [Content, formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,10 +72,10 @@ export default function LeftEmail() {
       <img
         src={mailHeader}
         alt="메일 갈색 헤더"
-        style={{ width: '779px', height: '35px', marginBottom: '10px' }}
+        style={{ width: '779px', height: '35px', marginBottom: '5px' }}
       />
       <Theme>
-        <Flex direction="column" gap="2" style={{ maxWidth: 779 }}>
+        <Flex direction="column" gap="1" style={{ maxWidth: 779 }}>
           <InputWithButton
             name="title"
             className="title"
