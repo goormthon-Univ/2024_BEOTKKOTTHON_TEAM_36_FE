@@ -48,7 +48,7 @@ margin-bottom: 10px;
 .button{
   width: 242px;
   height: 70px;
-  padding: 13px 40px 14px 38px;
+  padding: 13px 20px;
   color: #000;
   text-align: center;
   font-family: AppleSDGothicNeoSB00;
@@ -61,6 +61,7 @@ margin-bottom: 10px;
 background: var(--White, #FFF);
 box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.20), 1px 1px 11px 0px rgba(0, 0, 0, 0.15) inset;
 }
+
 
 .imageWrapper {
     position: relative;
@@ -90,9 +91,21 @@ box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.20), 1px 1px 11px 0px rgba(0, 0, 0, 
 
   .right-logo{ 
     position: absolute;
-    width: 550px;
-    height: 400px;
+    width: 530px;
+    height: 360px;
     top: 0;
     right: 0;
     z-index: 1; /* monkey보다 뒤에 오도록 설정 */
   }
+
+  .container {
+    display: flex;
+    justify-content: space-between; /* 두 요소를 양 끝으로 정렬 */
+    align-items: center; /* 세로 축에서 가운데 정렬, 필요시 사용 */
+  }
+  
+.blank{
+  width: 140px;
+  height: 500px;
+  margin-right: 30px;
+}

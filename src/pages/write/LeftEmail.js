@@ -24,30 +24,30 @@ export default function LeftEmail() {
     // console.log('button');
   };
 
-  // useEffect(() => {
-  //   const postData = async () => {
-  //     const PostData = {
-  //       user_id: 1,
-  //       sender: formData.sendName,
-  //       sender_info: formData.situation,
-  //       receiver: formData.recipientName,
-  //       receiver_info: formData.target,
-  //       purpose: Content.main.text,
-  //     };
+  useEffect(() => {
+    const postData = async () => {
+      const PostData = {
+        user_id: 1,
+        sender: formData.sendName,
+        sender_info: formData.situation,
+        receiver: formData.recipientName,
+        receiver_info: formData.target,
+        purpose: Content.main.text,
+      };
 
-  //     try {
-  //       const response = await axios.post(
-  //         'https://maeilmail.site/api/helper',
-  //         PostData,
-  //       );
-  //       console.log('성공:', response.data);
-  //     } catch (error) {
-  //       console.error('오류 발생:', error);
-  //     }
-  //   };
+      try {
+        const response = await axios.post(
+          'https://maeilmail.site/api/helper',
+          PostData,
+        );
+        console.log('성공:', response.data);
+      } catch (error) {
+        console.error('오류 발생:', error);
+      }
+    };
 
-  //   postData();
-  // }, [Content, formData]);
+    postData();
+  }, [Content, formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
