@@ -19,6 +19,7 @@ function WriteScreen() {
   const [isInputed, setInputed] = useRecoilState(isInputedState);
   const Content = useRecoilValue(contentsState);
   const formData = useRecoilValue(formDataState);
+  const [writerInfo, setWriterInfo] = useState(null);
   const postMailHelper = () => {
     const requestData = {
       user_id: 1,
@@ -32,8 +33,7 @@ function WriteScreen() {
     axios
       .post('https://maeilmail.site/api/helper', requestData)
       .then((response) => {
-        console.log(response);
-        // Handle the response here
+        setWriterInfo(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -68,7 +68,7 @@ function WriteScreen() {
       <div>
         {/* <img src={logo} alt='회색 로고'/> */}
         <div className="Email-container">
-          <LeftEmail />
+          <LeftEmail writerInfo={writerInfo} />
         </div>
       </div>
     </div>
