@@ -5,9 +5,41 @@ import { useNavigate } from 'react-router-dom';
 import LeftEmail from './LeftEmail';
 import Header from '../../components/Header/Header';
 import RightEmail from './RightEmail';
+import axios from 'axios';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import {
+  contentsState,
+  formDataState,
+  isInputedState,
+} from '../../recoil/atoms';
 // import logo from '../../asset'
 
 function WriteScreen() {
+  const [contents, setContents] = useRecoilState(contentsState);
+  const [isInputed, setInputed] = useRecoilState(isInputedState);
+  const Content = useRecoilValue(contentsState);
+  const formData = useRecoilValue(formDataState);
+  const postMailHelper = () => {
+    const requestData = {
+      user_id: 1,
+      sender: formData.sendName,
+      sender_info: formData.sendInput,
+      receiver: formData.recipientName,
+      receiver_info: formData.target,
+      purpose: formData.situation,
+    };
+
+    axios
+      .post('https://maeilmail.site/api/helper', requestData)
+      .then((response) => {
+        console.log(response);
+        // Handle the response here
+      })
+      .catch((error) => {
+        console.error(error);
+        // Handle the error here
+      });
+  };
   const navigate = useNavigate();
   const [isCheck, setIsCheck] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
@@ -31,6 +63,7 @@ function WriteScreen() {
           setIsCheck(true);
           setIsOpen(false);
         }}
+        postMailHelper={postMailHelper}
       />
       <div>
         {/* <img src={logo} alt='회색 로고'/> */}

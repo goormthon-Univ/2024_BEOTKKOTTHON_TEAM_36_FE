@@ -24,8 +24,6 @@ export default function LeftEmailTitle() {
   const [apiResponse, setApiResponse] = useState(null);
   const [kind, setKind] = useState('');
 
-  const handleButtonClick = () => {};
-
   const handleButtonClickTitle = async () => {
     try {
       const postData = {
