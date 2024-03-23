@@ -12,7 +12,7 @@ function InputWithSelectBox({
 }) {
   return (
     <div className="Q">
-      <p>To</p>
+      <p>To&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
       <input
         className="name-input"
         placeholder={inputPlaceholder}
