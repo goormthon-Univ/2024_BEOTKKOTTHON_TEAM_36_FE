@@ -19,6 +19,8 @@ function WriteScreen() {
   const [isInputed, setInputed] = useRecoilState(isInputedState);
   const Content = useRecoilValue(contentsState);
   const formData = useRecoilValue(formDataState);
+  const [serverResponse, setServerResponse] = useState('');
+
   const postMailHelper = () => {
     const requestData = {
       user_id: 1,
@@ -33,7 +35,7 @@ function WriteScreen() {
       .post('https://maeilmail.site/api/helper', requestData)
       .then((response) => {
         console.log(response);
-        // Handle the response here
+        setServerResponse(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -68,7 +70,7 @@ function WriteScreen() {
       <div>
         {/* <img src={logo} alt='회색 로고'/> */}
         <div className="Email-container">
-          <LeftEmail />
+          <LeftEmail serverResponse={serverResponse} />
         </div>
       </div>
     </div>
