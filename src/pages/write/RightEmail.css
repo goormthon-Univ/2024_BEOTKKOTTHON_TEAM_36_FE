@@ -35,7 +35,36 @@ margin-top: 5px;
   width: 514px;
   height: 600px;
   border-radius: 5px;
-    border: 3.25px solid rgba(116, 106, 106, 0.50);
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.20);
+  border: 3.25px solid rgba(116, 106, 106, 0.50);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.20);
+  overflow-y: scroll;
 }
 
+.one, .two, .three{
+  border: 3px solid rgba(116, 106, 106, 0.50);
+  border-radius: 5px;
+  margin: 20px 10px;
+  padding: 15px;
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infoKind{
+  margin-left: 20px;
+  margin-top: 30px;
+  font-family: AppleSDGothicNeoSB00;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+}
+
+.copy{
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border: none;
+  align-self: flex-end;
+  margin-top: auto;
+}

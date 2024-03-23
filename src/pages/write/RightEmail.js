@@ -2,12 +2,35 @@ import { useState } from 'react';
 import './RightEmail.css';
 import LastModal from './Modal/LastModal';
 import arrow from '../../asset/sendArrow.png';
-function RightEmail() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+import { useRecoilValue } from 'recoil';
+import { formDataState } from '../../recoil/atoms';
+import copy from '../../asset/copyIcon.png';
 
+function RightEmail({ apiResponse, kind }) {
+  const kindContent = kind;
+  const formData = useRecoilValue(formDataState);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const apiContent1 =
+    apiResponse && apiResponse.data && apiResponse.data.version1;
+  const apiContent2 =
+    apiResponse && apiResponse.data && apiResponse.data.version2;
+  const apiContent3 =
+    apiResponse && apiResponse.data && apiResponse.data.version3;
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(
+      () => {
+        alert('복사 성공');
+      },
+      () => {
+        alert('복사 실패');
+      },
+    );
+  };
+
   return (
     <div className="right-container" style={{ marginLeft: '40px' }}>
       <div className="first-container">
@@ -17,7 +40,48 @@ function RightEmail() {
         />
         <div className="reference">참조</div>
       </div>
-      <div className="emailContents"></div>
+
+      <div className="emailContents">
+        <div className="infoKind">
+          {kindContent +
+            ' 영역에서 ' +
+            formData.recipientName +
+            ' ' +
+            formData.target +
+            ' 대상으로 새로 생성한 템플릿이에요!'}
+        </div>
+        <div className="one">
+          {apiContent1}
+          <button
+            className="copy"
+            button
+            onClick={() => copyToClipboard(apiContent1)}
+          >
+            <img src={copy} alt="복사하기" />
+          </button>
+        </div>
+        <div className="two">
+          {apiContent2}
+          <button
+            className="copy"
+            button
+            onClick={() => copyToClipboard(apiContent2)}
+          >
+            <img src={copy} alt="복사하기" />
+          </button>
+        </div>
+        <div className="three">
+          {apiContent3}
+          <button
+            className="copy"
+            button
+            onClick={() => copyToClipboard(apiContent3)}
+          >
+            <img src={copy} alt="복사하기" />
+          </button>
+        </div>
+      </div>
+
       <div className="last-container">
         <input
           className="senderEmail"
