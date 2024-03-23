@@ -20,12 +20,10 @@ function WriteScreen() {
   const Content = useRecoilValue(contentsState);
   const formData = useRecoilValue(formDataState);
 
-
   const retryCount = 3;
   let retry = 0;
 
   const [serverResponse, setServerResponse] = useState('');
-
 
   const postMailHelper = () => {
     const requestData = {
@@ -37,7 +35,6 @@ function WriteScreen() {
       purpose: formData.situation,
     };
 
-
     const sendRequest = () => {
       axios
         .post('https://maeilmail.site/api/helper', requestData, {
@@ -45,6 +42,7 @@ function WriteScreen() {
         })
         .then((response) => {
           console.log(response);
+          setServerResponse(response.data);
           alert('메일이 성공적으로 전송되었습니다.');
         })
         .catch((error) => {
@@ -60,7 +58,6 @@ function WriteScreen() {
     };
 
     sendRequest();
-
   };
 
   const navigate = useNavigate();
