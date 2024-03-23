@@ -19,7 +19,10 @@ function WriteScreen() {
   const [isInputed, setInputed] = useRecoilState(isInputedState);
   const Content = useRecoilValue(contentsState);
   const formData = useRecoilValue(formDataState);
-  const [writerInfo, setWriterInfo] = useState(null);
+
+  const retryCount = 3;
+  let retry = 0;
+
   const postMailHelper = () => {
     const requestData = {
       user_id: 1,
@@ -30,16 +33,30 @@ function WriteScreen() {
       purpose: formData.situation,
     };
 
-    axios
-      .post('https://maeilmail.site/api/helper', requestData)
-      .then((response) => {
-        setWriterInfo(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-        // Handle the error here
-      });
+    const sendRequest = () => {
+      axios
+        .post('https://maeilmail.site/api/helper', requestData, {
+          timeout: 20000,
+        })
+        .then((response) => {
+          console.log(response);
+          alert('메일이 성공적으로 전송되었습니다.');
+        })
+        .catch((error) => {
+          console.error(error);
+          if (retry < retryCount) {
+            retry++;
+            sendRequest();
+          } else {
+            alert('메일 전송에 실패했습니다. 다시 시도해주세요.');
+            window.location.reload();
+          }
+        });
+    };
+
+    sendRequest();
   };
+
   const navigate = useNavigate();
   const [isCheck, setIsCheck] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
@@ -68,7 +85,7 @@ function WriteScreen() {
       <div>
         {/* <img src={logo} alt='회색 로고'/> */}
         <div className="Email-container">
-          <LeftEmail writerInfo={writerInfo} />
+          <LeftEmail />
         </div>
       </div>
     </div>
