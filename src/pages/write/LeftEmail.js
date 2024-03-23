@@ -23,7 +23,14 @@ export default function LeftEmailTitle({ serverResponse }) {
   const formData = useRecoilValue(formDataState);
   const [apiResponse, setApiResponse] = useState(null);
   const [kind, setKind] = useState('');
-
+  const response1 =
+    serverResponse && serverResponse.data && serverResponse.data.subject;
+  const response2 =
+    serverResponse && serverResponse.data && serverResponse.data.greeting;
+  const response3 =
+    serverResponse && serverResponse.data && serverResponse.data.body;
+  const response4 =
+    serverResponse && serverResponse.data && serverResponse.data.closing;
   const handleButtonClickTitle = async () => {
     try {
       const postData = {
@@ -153,7 +160,7 @@ export default function LeftEmailTitle({ serverResponse }) {
                 className="title"
                 name="title"
                 placeholder="제목"
-                value={contents.title.text}
+                value={response1}
                 onChange={handleChange}
               />
               <button className="titleButton" onClick={handleButtonClickTitle}>
@@ -165,7 +172,7 @@ export default function LeftEmailTitle({ serverResponse }) {
                 className="greet"
                 name="greet"
                 placeholder="인사말"
-                value={contents.greet.text}
+                value={response2}
                 onChange={handleChange}
               />
               <button
@@ -180,7 +187,7 @@ export default function LeftEmailTitle({ serverResponse }) {
                 className="main"
                 name="main"
                 placeholder="본문"
-                value={contents.main.text}
+                value={response3}
                 onChange={handleChange}
               />
               <button className="mainButton" onClick={handleButtonClickBody}>
@@ -195,7 +202,7 @@ export default function LeftEmailTitle({ serverResponse }) {
                 className="conclude"
                 name="conclude"
                 placeholder="맺음말"
-                value={contents.conclude.text}
+                value={response4}
                 onChange={handleChange}
               />
               <button
