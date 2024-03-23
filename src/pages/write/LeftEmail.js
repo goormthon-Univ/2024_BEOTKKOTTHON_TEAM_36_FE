@@ -14,45 +14,96 @@ import {
   isInputedState,
 } from '../../recoil/atoms';
 
-export default function LeftEmail() {
+export default function LeftEmailTitle() {
   const [contents, setContents] = useRecoilState(contentsState);
   const [isInputed, setInputed] = useRecoilState(isInputedState);
   const Content = useRecoilValue(contentsState);
   const formData = useRecoilValue(formDataState);
 
-  const handleButtonClick = () => {
-    // console.log('button');
+  const handleButtonClick = () => {};
+
+  const handleButtonClickTitle = async () => {
+    try {
+      const postData = {
+        user_id: 1,
+        sender: formData.sendName,
+        sender_info: formData.sendInput,
+        receiver: formData.recipientName,
+        receiver_info: formData.target,
+        purpose: formData.situation,
+      };
+      const response = await axios.post(
+        'https://maeilmail.site/api/helper/retry?content-part=title',
+        postData,
+        { timeout: 30000 },
+      );
+      console.log('성공:', response.data);
+    } catch (error) {
+      console.error('오류 발생:', error);
+    }
   };
-  // if (버튼이 클릭되면) {
-  //   useEffect(() => {
-  //     const postData = async () => {
-  //       const PostData = {
-  //         user_id: 1,
-  //         sender: formData.sendName,
-  //         sender_info: formData.sendInput,
-  //         receiver: formData.recipientName,
-  //         receiver_info: formData.target,
-  //         purpose: formData.situation,
-  //       };
 
-  //       console.log('PostData:', PostData);
-  //       try {
-  //         const response = await axios.post(
-  //           'https://maeilmail.site/api/helper',
-  //           PostData,
-  //           { timeout: 30000 },
-  //         );
-  //         console.log('성공:', response.data);
-  //       } catch (error) {
-  //         console.error('오류 발생:', error);
-  //       }
-  //     };
-  //     postData();
-  //   }, [Content.main.text]);
+  const handleButtonClickGreeting = async () => {
+    try {
+      const postData = {
+        user_id: 1,
+        sender: formData.sendName,
+        sender_info: formData.sendInput,
+        receiver: formData.recipientName,
+        receiver_info: formData.target,
+        purpose: formData.situation,
+      };
+      const response = await axios.post(
+        'https://maeilmail.site/api/helper/retry?content-part=greeting',
+        postData,
+        { timeout: 30000 },
+      );
+      console.log('성공:', response.data);
+    } catch (error) {
+      console.error('오류 발생:', error);
+    }
+  };
+  const handleButtonClickBody = async () => {
+    try {
+      const postData = {
+        user_id: 1,
+        sender: formData.sendName,
+        sender_info: formData.sendInput,
+        receiver: formData.recipientName,
+        receiver_info: formData.target,
+        purpose: formData.situation,
+      };
+      const response = await axios.post(
+        'https://maeilmail.site/api/helper/retry?content-part=body',
+        postData,
+        { timeout: 30000 },
+      );
+      console.log('성공:', response.data);
+    } catch (error) {
+      console.error('오류 발생:', error);
+    }
+  };
 
-  // }else{
-
-  // }
+  const handleButtonClickClosing = async () => {
+    try {
+      const postData = {
+        user_id: 1,
+        sender: formData.sendName,
+        sender_info: formData.sendInput,
+        receiver: formData.recipientName,
+        receiver_info: formData.target,
+        purpose: formData.situation,
+      };
+      const response = await axios.post(
+        'https://maeilmail.site/api/helper/retry?content-part=closing',
+        postData,
+        { timeout: 30000 },
+      );
+      console.log('성공:', response.data);
+    } catch (error) {
+      console.error('오류 발생:', error);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -91,7 +142,7 @@ export default function LeftEmail() {
                 value={contents.title.text}
                 onChange={handleChange}
               />
-              <button className="titleButton" onClick={handleButtonClick}>
+              <button className="titleButton" onClick={handleButtonClickTitle}>
                 <img src={aiLogo} alt="ai다시받기" />
               </button>
             </div>
@@ -103,7 +154,10 @@ export default function LeftEmail() {
                 value={contents.greet.text}
                 onChange={handleChange}
               />
-              <button className="greetButton" onClick={handleButtonClick}>
+              <button
+                className="greetButton"
+                onClick={handleButtonClickGreeting}
+              >
                 <img src={aiLogo} alt="ai다시받기" />
               </button>
             </div>
@@ -115,7 +169,7 @@ export default function LeftEmail() {
                 value={contents.main.text}
                 onChange={handleChange}
               />
-              <button className="mainButton" onClick={handleButtonClick}>
+              <button className="mainButton" onClick={handleButtonClickBody}>
                 <img src={aiLogo} alt="ai다시받기" />
               </button>
             </div>
@@ -130,7 +184,10 @@ export default function LeftEmail() {
                 value={contents.conclude.text}
                 onChange={handleChange}
               />
-              <button className="concludeButton" onClick={handleButtonClick}>
+              <button
+                className="concludeButton"
+                onClick={handleButtonClickClosing}
+              >
                 <img src={aiLogo} alt="ai다시받기" />
               </button>
             </div>
