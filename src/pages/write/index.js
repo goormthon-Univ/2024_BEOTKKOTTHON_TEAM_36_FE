@@ -20,8 +20,12 @@ function WriteScreen() {
   const Content = useRecoilValue(contentsState);
   const formData = useRecoilValue(formDataState);
 
+
   const retryCount = 3;
   let retry = 0;
+
+  const [serverResponse, setServerResponse] = useState('');
+
 
   const postMailHelper = () => {
     const requestData = {
@@ -32,6 +36,7 @@ function WriteScreen() {
       receiver_info: formData.target,
       purpose: formData.situation,
     };
+
 
     const sendRequest = () => {
       axios
@@ -55,6 +60,7 @@ function WriteScreen() {
     };
 
     sendRequest();
+
   };
 
   const navigate = useNavigate();
@@ -85,7 +91,7 @@ function WriteScreen() {
       <div>
         {/* <img src={logo} alt='회색 로고'/> */}
         <div className="Email-container">
-          <LeftEmail />
+          <LeftEmail serverResponse={serverResponse} />
         </div>
       </div>
     </div>
