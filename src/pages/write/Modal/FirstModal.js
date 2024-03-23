@@ -7,8 +7,21 @@ import header from '../../../asset/ModalHeader.png';
 import modalMonkey from '../../../asset/modalMonkey.png';
 import BlueButton from './BlueButton';
 
-export function FirstModal({ isOpen, handleCheck, handleChangeModal }) {
+export function FirstModal({
+  isOpen,
+  handleCheck,
+  handleChangeModal,
+  postMailHelper,
+}) {
   const [step, setStep] = useState(1);
+
+  const postMailHelperClick = () => {
+    if (typeof postMailHelper === 'function') {
+      postMailHelper();
+    } else {
+      console.log(typeof postMailHelper);
+    }
+  };
 
   const renderContent = () => {
     switch (step) {
@@ -50,7 +63,9 @@ export function FirstModal({ isOpen, handleCheck, handleChangeModal }) {
             <BlueButton
               className="next"
               style={{ marginRight: '110px', marginTop: '21px' }}
-              onClick={() => setStep(2)}
+              onClick={() => {
+                setStep(2);
+              }}
             >
               AI 자동생성하기
             </BlueButton>
@@ -81,7 +96,10 @@ export function FirstModal({ isOpen, handleCheck, handleChangeModal }) {
             <div style={{ position: 'relative' }}>
               <BlueButton
                 style={{ marginRight: '110px', marginTop: '21px' }}
-                onClick={handleCheck}
+                onClick={() => {
+                  handleCheck();
+                  postMailHelperClick();
+                }}
               >
                 확인하러가기
               </BlueButton>

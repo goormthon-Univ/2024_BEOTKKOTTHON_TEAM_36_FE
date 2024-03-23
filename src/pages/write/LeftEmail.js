@@ -20,8 +20,6 @@ export default function LeftEmailTitle() {
   const Content = useRecoilValue(contentsState);
   const formData = useRecoilValue(formDataState);
 
-  const handleButtonClick = () => {};
-
   const handleButtonClickTitle = async () => {
     try {
       const postData = {
