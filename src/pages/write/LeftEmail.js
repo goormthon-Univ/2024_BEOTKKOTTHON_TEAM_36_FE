@@ -57,6 +57,7 @@ export default function LeftEmailTitle({ serverResponse }) {
       console.log('성공:', response.data);
     } catch (error) {
       console.error('오류 발생:', error);
+      alert('재요청 해주세요!');
     }
   };
 
@@ -80,6 +81,7 @@ export default function LeftEmailTitle({ serverResponse }) {
       console.log('성공:', response.data);
     } catch (error) {
       console.error('오류 발생:', error);
+      alert('재요청 해주세요!');
     }
   };
   const handleButtonClickBody = async () => {
@@ -102,6 +104,7 @@ export default function LeftEmailTitle({ serverResponse }) {
       console.log('성공:', response.data);
     } catch (error) {
       console.error('오류 발생:', error);
+      alert('재요청 해주세요!');
     }
   };
 
@@ -126,6 +129,7 @@ export default function LeftEmailTitle({ serverResponse }) {
       console.log('성공:', response.data);
     } catch (error) {
       console.error('오류 발생:', error);
+      alert('재요청 해주세요!');
     }
   };
 
