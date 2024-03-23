@@ -36,7 +36,6 @@ function WriteScreen() {
         {/* <img src={logo} alt='회색 로고'/> */}
         <div className="Email-container">
           <LeftEmail />
-          <RightEmail />
         </div>
       </div>
     </div>

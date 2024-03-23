@@ -1,57 +1,58 @@
+.top-container{
+  display: flex;
+}
 
 .left-container{
   display: flex;
   flex-direction: column;
 }
 
-  .title{
-    background-color: white;
-    width: 770px;
-    height: 50px;
-    border-radius: 5px;
-    border: 3.25px solid rgba(116, 106, 106, 0.50);
-    font-size: 18px;
+.title{
+  background-color: white;
+  width: 770px;
+  height: 50px;
+  border-radius: 5px;
+  border: 3.25px solid rgba(116, 106, 106, 0.50);
+  font-size: 18px;
   }
   
   .main{
-    background-color: white;
-    width: 770px;
-    height: 240px;
-    border-radius: 5px;
-    border: 3.25px solid rgba(116, 106, 106, 0.50);
-    font-size: 18px;
+  background-color: white;
+  width: 770px;
+  height: 240px;
+  border-radius: 5px;
+  border: 3.25px solid rgba(116, 106, 106, 0.50);
+  font-size: 18px;
   }
   
   .greet{
-    background-color: white;
-    width: 770px;
-    height: 100px;
-    border-radius: 5px;
-    border: 3.25px solid rgba(116, 106, 106, 0.50);
-    font-size: 18px;
+  background-color: white;
+  width: 770px;
+  height: 100px;
+  border-radius: 5px;
+  border: 3.25px solid rgba(116, 106, 106, 0.50);
+  font-size: 18px;
   }
   
 .conclude{
-    background-color: white;
-    width: 770px;
-    height: 140px;
-    border-radius: 5px;
-    border: 3.25px solid rgba(116, 106, 106, 0.50);
-    font-size: 18px;
-}
-
-.title-container{
-  position: relative;
+  background-color: white;
+  width: 770px;
+  height: 140px;
+  border-radius: 5px;
+  border: 3.25px solid rgba(116, 106, 106, 0.50);
+  font-size: 18px;
 }
 
 .titleButton, .greetButton, .mainButton, .concludeButton{
   position: absolute;
   background-color: #746A6A;
   width: 85px;
-height: 35px;
-border: none;
-border-radius: 200px;
-}
+  height: 35px;
+  border: none;
+  border-radius: 200px;
+  right: 10px;
+  top: 11px;
+} 
 
 .title::placeholder, .greet::placeholder, .main::placeholder, .conclude::placeholder{
   padding-left: 10px;
