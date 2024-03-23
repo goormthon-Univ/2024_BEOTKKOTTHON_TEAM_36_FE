@@ -16,7 +16,7 @@ import {
   isInputedState,
 } from '../../recoil/atoms';
 
-export default function LeftEmailTitle() {
+export default function LeftEmailTitle({ serverResponse }) {
   const [contents, setContents] = useRecoilState(contentsState);
   const [isInputed, setInputed] = useRecoilState(isInputedState);
   const Content = useRecoilValue(contentsState);
