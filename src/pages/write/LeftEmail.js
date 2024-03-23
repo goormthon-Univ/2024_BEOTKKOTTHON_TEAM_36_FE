@@ -1,7 +1,7 @@
 import './LeftEmail.css';
 import '@radix-ui/themes/styles.css';
 import { Theme, Flex } from '@radix-ui/themes';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import mailHeader from '../../asset/emailHeader.png';
 import grayLogo from '../../asset/grayLogo.png';
 import RightEmail from './RightEmail';
@@ -23,6 +23,7 @@ export default function LeftEmailTitle({ serverResponse }) {
   const formData = useRecoilValue(formDataState);
   const [apiResponse, setApiResponse] = useState(null);
   const [kind, setKind] = useState('');
+  const mainRef = useRef(null);
   const response1 =
     serverResponse && serverResponse.data && serverResponse.data.subject;
   const response2 =
@@ -156,24 +157,28 @@ export default function LeftEmailTitle({ serverResponse }) {
         <Theme>
           <Flex direction="column" gap="1" style={{ maxWidth: 779 }}>
             <div className="title-container" style={{ position: 'relative' }}>
-              <input
+              <textarea
                 className="title"
                 name="title"
                 placeholder="제목"
                 value={response1}
                 onChange={handleChange}
+                rows="3"
+                style={{ resize: 'none' }}
               />
               <button className="titleButton" onClick={handleButtonClickTitle}>
                 <img src={aiLogo} alt="ai다시받기" />
               </button>
             </div>
             <div className="greet-container" style={{ position: 'relative' }}>
-              <input
+              <textarea
                 className="greet"
                 name="greet"
                 placeholder="인사말"
                 value={response2}
                 onChange={handleChange}
+                rows="3"
+                style={{ resize: 'none' }}
               />
               <button
                 className="greetButton"
@@ -183,12 +188,14 @@ export default function LeftEmailTitle({ serverResponse }) {
               </button>
             </div>
             <div className="main-container" style={{ position: 'relative' }}>
-              <input
+              <textarea
                 className="main"
                 name="main"
                 placeholder="본문"
                 value={response3}
                 onChange={handleChange}
+                rows="3"
+                style={{ resize: 'none' }}
               />
               <button className="mainButton" onClick={handleButtonClickBody}>
                 <img src={aiLogo} alt="ai다시받기" />
@@ -198,12 +205,14 @@ export default function LeftEmailTitle({ serverResponse }) {
               className="conclude-container"
               style={{ position: 'relative' }}
             >
-              <input
+              <textarea
                 className="conclude"
                 name="conclude"
                 placeholder="맺음말"
                 value={response4}
                 onChange={handleChange}
+                rows="3"
+                style={{ resize: 'none' }}
               />
               <button
                 className="concludeButton"

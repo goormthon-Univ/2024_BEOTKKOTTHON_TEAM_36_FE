@@ -71,11 +71,11 @@ font-weight: 700;
 }
 
 .right-container{
-  visibility: hidden;
+  visibility: visible;
 }
 
 .Loading{
-  visibility: visible;;
+  visibility: hidden;
 }
 
 .SecondemailContents{

@@ -7,6 +7,13 @@
   flex-direction: column;
 }
 
+.title-container, .greet-container, .main-container, .conclude-container{
+  /* display: flex;  */
+  position: relative;
+  align-items: center; /* 세로축 중앙 정렬 */
+  gap: 10px;
+}
+
 .title{
   background-color: white;
   width: 770px;
@@ -14,6 +21,7 @@
   border-radius: 5px;
   border: 3.25px solid rgba(116, 106, 106, 0.50);
   font-size: 18px;
+
   }
   
   .main{
@@ -23,6 +31,7 @@
   border-radius: 5px;
   border: 3.25px solid rgba(116, 106, 106, 0.50);
   font-size: 18px;
+
   }
   
   .greet{
@@ -32,6 +41,7 @@
   border-radius: 5px;
   border: 3.25px solid rgba(116, 106, 106, 0.50);
   font-size: 18px;
+  
   }
   
 .conclude{
@@ -41,9 +51,10 @@
   border-radius: 5px;
   border: 3.25px solid rgba(116, 106, 106, 0.50);
   font-size: 18px;
+
 }
 
-.titleButton, .greetButton, .mainButton, .concludeButton{
+.titleButton{
   position: absolute;
   background-color: #746A6A;
   width: 85px;
@@ -53,7 +64,39 @@
   right: 10px;
   top: 11px;
 } 
+.greetButton{
+  position: absolute;
+  background-color: #746A6A;
+  width: 85px;
+  height: 35px;
+  border: none;
+  border-radius: 200px;
+  right: 10px;
+  top: 60px;
+}
 
+.mainButton{
+  position: absolute;
+  background-color: #746A6A;
+  width: 85px;
+  height: 35px;
+  border: none;
+  border-radius: 200px;
+  right: 10px;
+  top: 200px;
+  bottom: -20px;
+}
+
+.concludeButton{
+  position: absolute;
+  background-color: #746A6A;
+  width: 85px;
+  height: 35px;
+  border: none;
+  border-radius: 200px;
+  right: 10px;
+  top: 100px;
+}
 .title::placeholder, .greet::placeholder, .main::placeholder, .conclude::placeholder{
   padding-left: 10px;
 }
