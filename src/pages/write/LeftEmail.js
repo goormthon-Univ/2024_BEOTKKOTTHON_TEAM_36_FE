@@ -21,7 +21,7 @@ export default function LeftEmail() {
   const formData = useRecoilValue(formDataState);
 
   const handleButtonClick = () => {
-    console.log('button');
+    // console.log('button');
   };
   // if (버튼이 클릭되면) {
   //   useEffect(() => {
