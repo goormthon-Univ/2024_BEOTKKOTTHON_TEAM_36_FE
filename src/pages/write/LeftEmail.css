@@ -64,6 +64,15 @@
   right: 10px;
   top: 11px;
 } 
+
+.titleButton:disabled,
+.greetButton:disabled,
+.mainButton:disabled,
+.concludeButton:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
 .greetButton{
   position: absolute;
   background-color: #746A6A;

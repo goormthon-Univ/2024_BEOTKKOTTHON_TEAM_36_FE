@@ -8,6 +8,7 @@ import RightEmail from './RightEmail';
 import axios from 'axios';
 import aiLogo from '../../asset/aiLogo.png';
 import { useRecoilState, useRecoilValue } from 'recoil';
+import { FormProvider, useForm } from 'react-hook-form';
 
 import emailMonkey from '../../asset/emailMonkey.png';
 import {
@@ -17,21 +18,25 @@ import {
 } from '../../recoil/atoms';
 
 export default function LeftEmailTitle({ serverResponse }) {
-  const [contents, setContents] = useRecoilState(contentsState);
-  const [isInputed, setInputed] = useRecoilState(isInputedState);
-  const Content = useRecoilValue(contentsState);
   const formData = useRecoilValue(formDataState);
   const [apiResponse, setApiResponse] = useState(null);
   const [kind, setKind] = useState('');
-  const mainRef = useRef(null);
-  const response1 =
-    serverResponse && serverResponse.data && serverResponse.data.subject;
-  const response2 =
-    serverResponse && serverResponse.data && serverResponse.data.greeting;
-  const response3 =
-    serverResponse && serverResponse.data && serverResponse.data.body;
-  const response4 =
-    serverResponse && serverResponse.data && serverResponse.data.closing;
+
+  const formMethods = useForm({
+    mode: 'onChange',
+    values: {
+      greet: serverResponse.data?.greeting,
+      title: serverResponse.data?.subject,
+      main: serverResponse.data?.body,
+      conclude: serverResponse.data?.closing,
+    },
+  });
+  const {
+    register,
+    formState: { errors },
+  } = formMethods;
+
+  //   serverResponse && serverResponse.data && serverResponse.data.closing;
   const handleButtonClickTitle = async () => {
     try {
       const postData = {
@@ -124,109 +129,114 @@ export default function LeftEmailTitle({ serverResponse }) {
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setContents({
-      ...contents,
-      [name]: { text: value, length: value.length },
-    });
-    setInputed({
-      ...isInputed,
-      [name]: value.length > 0,
-    });
-  };
+  // const handleChange = (e) => {
+  // const { name, value } = e.target;
 
-  useEffect(() => {
-    console.log(isInputed);
-    console.log(contents);
-  }, [isInputed, contents]);
+  // setContents({
+  //   ...contents,
+  //   [name]: { text: value, length: value.length },
+  // });
+  // setInputed({
+  //   ...isInputed,
+  //   [name]: value.length > 0,
+  // });
+  // };
+
+  // useEffect(() => {
+  //   console.log(isInputed);
+  //   console.log(contents);
+  // }, [isInputed, contents]);
 
   return (
-    <div className="top-container">
-      <div className="left-container">
-        <img
-          src={emailMonkey}
-          alt="회색 메일 로고"
-          style={{ width: '779px' }}
-        />
-        <img
-          src={mailHeader}
-          alt="메일 갈색 헤더"
-          style={{ width: '779px', height: '35px', marginBottom: '5px' }}
-        />
-        <Theme>
-          <Flex direction="column" gap="1" style={{ maxWidth: 779 }}>
-            <div className="title-container" style={{ position: 'relative' }}>
-              <textarea
-                className="title"
-                name="title"
-                placeholder="제목"
-                value={response1}
-                onChange={handleChange}
-                rows="3"
-                style={{ resize: 'none' }}
-              />
-              <button className="titleButton" onClick={handleButtonClickTitle}>
-                <img src={aiLogo} alt="ai다시받기" />
-              </button>
-            </div>
-            <div className="greet-container" style={{ position: 'relative' }}>
-              <textarea
-                className="greet"
-                name="greet"
-                placeholder="인사말"
-                value={response2}
-                onChange={handleChange}
-                rows="3"
-                style={{ resize: 'none' }}
-              />
-              <button
-                className="greetButton"
-                onClick={handleButtonClickGreeting}
+    <FormProvider {...formMethods}>
+      <div className="top-container">
+        <div className="left-container">
+          <img
+            src={emailMonkey}
+            alt="회색 메일 로고"
+            style={{ width: '779px' }}
+          />
+          <img
+            src={mailHeader}
+            alt="메일 갈색 헤더"
+            style={{ width: '779px', height: '35px', marginBottom: '5px' }}
+          />
+          <Theme>
+            <Flex direction="column" gap="1" style={{ maxWidth: 779 }}>
+              <div className="title-container" style={{ position: 'relative' }}>
+                <textarea
+                  className="title"
+                  placeholder="제목"
+                  rows="3"
+                  style={{ resize: 'none' }}
+                  {...register('title', { required: true })}
+                />
+                <button
+                  className="titleButton"
+                  onClick={handleButtonClickTitle}
+                  disabled={!!errors.title}
+                >
+                  <img src={aiLogo} alt="ai다시받기" />
+                </button>
+              </div>
+              <div className="greet-container" style={{ position: 'relative' }}>
+                <textarea
+                  className="greet"
+                  placeholder="인사말"
+                  rows="3"
+                  style={{ resize: 'none' }}
+                  {...register('greet', { required: true })}
+                />
+                <button
+                  className="greetButton"
+                  onClick={handleButtonClickGreeting}
+                  disabled={!!errors.greet}
+                >
+                  <img src={aiLogo} alt="ai다시받기" />
+                </button>
+              </div>
+              <div className="main-container" style={{ position: 'relative' }}>
+                <textarea
+                  className="main"
+                  placeholder="본문"
+                  rows="3"
+                  style={{ resize: 'none' }}
+                  {...register('main', { required: true })}
+                />
+                <button
+                  className="mainButton"
+                  onClick={handleButtonClickBody}
+                  disabled={!!errors.main}
+                >
+                  <img src={aiLogo} alt="ai다시받기" />
+                </button>
+              </div>
+              <div
+                className="conclude-container"
+                style={{ position: 'relative' }}
               >
-                <img src={aiLogo} alt="ai다시받기" />
-              </button>
-            </div>
-            <div className="main-container" style={{ position: 'relative' }}>
-              <textarea
-                className="main"
-                name="main"
-                placeholder="본문"
-                value={response3}
-                onChange={handleChange}
-                rows="3"
-                style={{ resize: 'none' }}
-              />
-              <button className="mainButton" onClick={handleButtonClickBody}>
-                <img src={aiLogo} alt="ai다시받기" />
-              </button>
-            </div>
-            <div
-              className="conclude-container"
-              style={{ position: 'relative' }}
-            >
-              <textarea
-                className="conclude"
-                name="conclude"
-                placeholder="맺음말"
-                value={response4}
-                onChange={handleChange}
-                rows="3"
-                style={{ resize: 'none' }}
-              />
-              <button
-                className="concludeButton"
-                onClick={handleButtonClickClosing}
-              >
-                <img src={aiLogo} alt="ai다시받기" />
-              </button>
-            </div>
-          </Flex>
-        </Theme>
+                <textarea
+                  className="conclude"
+                  placeholder="맺음말"
+                  rows="3"
+                  style={{ resize: 'none' }}
+                  {...register('conclude', { required: true })}
+                />
+                <button
+                  className="concludeButton"
+                  onClick={handleButtonClickClosing}
+                  disabled={!!errors.conclude}
+                >
+                  <img src={aiLogo} alt="ai다시받기" />
+                </button>
+              </div>
+            </Flex>
+          </Theme>
+        </div>
+        <div className="right-container">
+          <RightEmail apiResponse={apiResponse} kind={kind} />
+        </div>
       </div>
-      <div className="right-container">
-        <RightEmail apiResponse={apiResponse} kind={kind} />
-      </div>
-    </div>
+    </FormProvider>
   );
 }
